@@ -1,0 +1,39 @@
+{
+  "name": "single-login",
+  "version": "1.0.0",
+  "description": "Aplicação basica utilizando Express + Redis para uma autenticação única",
+  "main": "src/server.js",
+  "repository": "https://github.com/NicolasWoitchik/single-login.git",
+  "author": "Nicolas Woitchik",
+  "license": "MIT",
+  "scripts": {
+    "start": "sucrase-node ./src/server.js",
+    "dev": "nodemon ./src/server.js",
+    "pretest": "NODE_ENV=test sequelize db:migrate",
+    "test": "NODE_ENV=test jest",
+    "posttest": "NODE_ENV=test sequelize db:migrate:undo:all"
+  },
+  "dependencies": {
+    "bcrypt": "^3.0.6",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "helmet": "^3.21.1",
+    "ioredis": "^4.14.1",
+    "jsonwebtoken": "^8.5.1",
+    "pg": "^7.12.1",
+    "sequelize": "^5.19.6",
+    "sequelize-cli": "^5.5.1",
+    "sucrase": "^3.10.1",
+    "yup": "^0.27.0"
+  },
+  "devDependencies": {
+    "@sucrase/jest-plugin": "^2.0.0",
+    "@types/jest": "^24.0.19",
+    "jest": "^24.9.0",
+    "nodemon": "^1.19.4",
+    "sqlite3": "^4.1.0",
+    "supertest": "^4.0.2"
+  }
+}
